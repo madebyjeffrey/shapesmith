@@ -1,0 +1,87 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  C:\Python\Scripts\;C:\Python\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Bitvise SSH Client;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Ruby24-x64\bin;C:\Program Files (x86)\GNU Tools ARM Embedded\7 2017-q4-major\bin;C:\Users\jptdr\.cargo\bin;C:\Users\jptdr\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jptdr\AppData\Roaming\npm;C:\Users\jptdr\AppData\Local\Yarn\bin;C:\Users\jptdr\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  9.5.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "shapesmith",
+    "description": "Shapesmith - Parametric, Open-Source 3D Modeling in your browser",
+    "tags": [],
+    "keywords": [
+      "3d modelling",
+      "webgl",
+      "cad"
+    ],
+    "version": "2.0.3",
+    "author": {
+      "name": "Benjamin Nortier",
+      "email": "bjnortier@shapesmith.net"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/bjnortier/shapesmith.next.git"
+    },
+    "contributors": [],
+    "scripts": {
+      "test": "grunt test",
+      "start": "nodemon -e js,hbs,json src/api/server.js"
+    },
+    "dependencies": {
+      "express": "4.x",
+      "hbs": "4.0.1",
+      "nconf": ">= 0.6.7",
+      "requirejs": "~2.1.2",
+      "underscore": "= 1.8.3",
+      "backbone-events": "git://github.com/bjnortier/backbone-events.git#0.9.9",
+      "backbone": "= 1.3.3",
+      "sqlite3": "~3.1.13",
+      "ueberDB": "git://github.com/bjnortier/ueberDB#feature/shapesmith",
+      "node-uuid": "~1.4.8",
+      "felix-couchdb": "~1.0.8",
+      "bcrypt": "~1.0.3",
+      "connect-redis": "~3.3.3",
+  
+    },
+    "devDependencies": {
+      "mocha": "= 1.7.4",
+      "chai": "= 1.3.0",
+      "libxmljs": ">= 0.7.1",
+      "grunt-simple-mocha": "~0.4.0",
+      "webdriverjs": "git://github.com/bjnortier/webdriverjs.git#feature/disable-request-pooling",
+      "grunt": "~0.4.1",
+      "grunt-cli": "~0.1.9",
+      "grunt-express": "~0.3.2",
+      "grunt-contrib-requirejs": "~0.4.0",
+      "grunt-contrib-jshint": "~0.6.4",
+      "grunt-contrib-watch": "~0.4.4",
+      "grunt-contrib-less": "~0.6.4",
+      "grunt-exec": "~0.4.2",
+      "grunt-contrib-uglify": "~0.2.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: C:\projects\shapesmith\package.json: Unexpected token } in JSON at position 991
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:770:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:92:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:103:13
+      at <anonymous>

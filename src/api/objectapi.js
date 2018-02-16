@@ -33,14 +33,14 @@ var ObjectAPI = function(app) {
   var create = function(username, type, object, res) {
     userDB.init(username, function(err, db) {
       if (err) {
-        return res.json(500, err);
+        return res.status(500).json(err);
       }
 
       objects.create(db, username, type, object, function(err, sha) {
         if (err) {
-          res.json(500, err);
+          res.status(500).json(err);
         } else {
-          res.json(201, sha);
+          res.status(201).json(sha);
         }
       });
     });
@@ -54,11 +54,11 @@ var ObjectAPI = function(app) {
 
       objects.get(db, username, type, sha, function(err, object) {
         if (err) {
-          res.send(500, err);
+          res.status(500).send(err);
         } else if (object === null) {
-          res.json(404, 'not found');
+          res.status(404).json('not found');
         } else {
-          return res.json(object);
+          return res.status(200).json(object);
         }
       });
     });

@@ -2,6 +2,10 @@ var express = require('express');
 var path = require('path');
 var nconf = require('nconf');
 var app = express();
+//var multer = require('multier');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
 var rootDir = path.normalize(path.join(__dirname, '../..'));
 
@@ -45,12 +49,13 @@ app.use('/src/node_modules', express.static(path.join(rootDir, 'node_modules')))
 app.use('/node_modules', express.static(path.join(rootDir, 'node_modules')));
 app.use('/lib', express.static(path.join(rootDir, 'src/lib')));
 
-app.use(express.bodyParser({limit: '50mb'}));
-app.use(express.cookieParser());
+app.use(bodyParser({limit: '50mb'}));
+  //express.bodyParser());
+app.use(cookieParser());
 
 if (config.redisSessionStore) {
   var RedisStore = require('connect-redis')(express);
-  app.use(express.session({
+  app.use(session({
     store: new RedisStore({
       host: 'localhost',
       port: 6379,
@@ -58,7 +63,7 @@ if (config.redisSessionStore) {
     secret: 'cd68c833de39de4bbb924acd54d9c635'
   }));
 } else {
-  app.use(express.session({secret: '00564f4637dcb818688842dac6442fe0'}));
+  app.use(session({secret: '00564f4637dcb818688842dac6442fe0'}));
 }
 
 var SessionAuth = function() {
