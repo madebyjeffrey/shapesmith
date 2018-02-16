@@ -57,7 +57,7 @@ var DesignAPI = function(app) {
     var username = decodeURIComponent(req.params[0]);
     var design = req.body.name && req.body.name.trim();
     if (design === undefined) {
-      res.status(400, json({errors: [{missing: 'name'}]}));
+      res.status(400).json({errors: [{missing: 'name'}]});
       return;
     }
     if (!designs.validate(design)) {
